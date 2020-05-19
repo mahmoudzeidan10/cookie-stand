@@ -1,8 +1,11 @@
 'use strict'
 
+var parentElement = document.getElementById('container');
+var tableEl = document.createElement('table');
+parentElement.appendChild(tableEl);
 
 var hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'] ;
-
+var shops =[ ];
 
 function Store(name, minCustomerPerHour, maxCustomerPerHour, averageCookierPerPerson){
   this.name = name;
@@ -12,6 +15,7 @@ function Store(name, minCustomerPerHour, maxCustomerPerHour, averageCookierPerPe
   this.customersEachHour = [];
   this.cookiesSoldEachHour = [];
   this.totalCookiesForTheDay = 0;
+  shops.push(this);
 }
 
 Store.prototype.calcCustomersEachHour = function(){
@@ -41,16 +45,43 @@ Store.prototype.cookiesForTheDay = function(){
     
   }
 }
-var parentElement = document.getElementById('table');
+// var parentElement = document.getElementById('container');
+function headerRender(){
+  var trEl =document.createElement('tr');
+  tableEl.appendChild(trEl);
+  var thEl = document.createElement('th');
+  trEl.appendChild(thEl); 
+  thEl.textContent = ' ' ;
+
+    for(var i=0; i<hours.length ; i++){
+    var thEl = document.createElement('th');
+    trEl.appendChild(thEl);
+    thEl.textContent = hours[i];
+
+
+  }
+}
+headerRender();
+
+function footerRender(){
+  var trEl =document.createElement('tr');
+  tableEl.appendChild(trEl);
+  var thEl = document.createElement('th');
+  trEl.appendChild(thEl); 
+  thEl.textContent = 'Total' ;
+
+}
+footerRender();
+
 
 Store.prototype.render = function(){
   this.cookiesForTheDay();
-
 
   var tableRow = document.createElement('tr');
   var tableheader = document.createElement('th');
   tableheader.textContent = this.name;
   tableRow.appendChild(tableheader);
+
 
   for(var i=0; i<this.cookiesSoldEachHour.length; i++){
     
@@ -79,11 +110,17 @@ var dubai = new Store('dubai', 11, 38, 3.7);
 var paris = new Store('paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
+
+
+// seattle.render();
+// tokyo.render();
+// dubai.render();
+// paris.render();
+// lima.render();
+
+for(var i=0 ; i<shops.length ; i++){
+  shops[i].render();
+}
 
 
 
