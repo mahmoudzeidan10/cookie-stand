@@ -98,6 +98,13 @@ Store.prototype.render = function(){
   parentElement.appendChild(tableRow);
 }
 
+
+
+
+
+
+
+
 // Random NUm Function Global
 
 function getRandomNumber(min, max){
@@ -124,9 +131,27 @@ for(var i=0 ; i<shops.length ; i++){
 
 
 
+var storeLocations = [];
+
+// EVENT MAKE
+
+var form = document.getElementById('Store');
+// form.addEventListener('submit', submitFunction);
+
+function submitFunction(event) {
+  event.preventDefault();
+  var name = event.target.storeName.value;
+  var minCust = event.target.minumumCustomers.value;
+  var maxCust = event.target.maximumCustomers.value;
+  var avgCookies = event.target.averageSales.value;
 
 
+  var newCookies = new Store(name, minCust, maxCust, avgCookies);
 
+  storeLocations.push(newCookies);
+  // console.log(newCookies);
+  render();
+}
 
 
 
