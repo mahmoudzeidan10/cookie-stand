@@ -32,10 +32,14 @@ a{
 }
 
 img{
-    margin-left: 100px;
+    /* margin-left: 100px;
     padding-left: 100px;
     margin-top: 40px;
+    padding-top: 15px; */
+    margin-top: 40px;
     padding-top: 15px;
+    padding-left: 30px;
+    width: 300px;
 }
 
 p{
@@ -45,8 +49,12 @@ p{
 }
 
 footer{
+    /* background-color:maroon ; 
+    height: 100px; */
     background-color:maroon ; 
-    height: 100px;
+    height: 150px;
+    padding-top: 30px;
+    margin-top: 20px;
 
 }
 
@@ -54,4 +62,35 @@ footer p {
     margin-top: 15px;
     padding-top: 50px;
     color: beige;
+}
+
+footer nav ul li{
+    font-size: 20px;
+    padding-left: 20px;
+    color: gold;
+    display: inline;
+    padding-bottom: 20px;
+}
+
+footer #nav2 {
+    padding-top: 20px;
+}
+
+footer #nav3 {
+    padding-top: 20px;
+}
+
+#footerSales{
+    background-color:maroon ; 
+    height: 50px;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+td{
+    padding: 15px;
+}
+
+th{
+    padding: 15px;
 }
