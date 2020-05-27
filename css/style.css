@@ -87,10 +87,10 @@ footer #nav3 {
     margin-top: 20px;
 }
 
-td{
-    padding: 15px;
-}
 
-th{
+table, th, td, tr {
+    border: 1px solid black;
     padding: 15px;
+    background-color:#09817b ;
+    color: #f5ff99;
 }

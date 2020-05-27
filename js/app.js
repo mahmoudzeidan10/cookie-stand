@@ -135,24 +135,26 @@ var storeLocations = [];
 
 // EVENT MAKE
 
-var form = document.getElementById('Store');
-// form.addEventListener('submit', submitFunction);
 
-function submitFunction(event) {
+var form = document.getElementById('Store-form');
+form.addEventListener('submit', function (event) {
   event.preventDefault();
-  var name = event.target.storeName.value;
-  var minCust = event.target.minumumCustomers.value;
-  var maxCust = event.target.maximumCustomers.value;
-  var avgCookies = event.target.averageSales.value;
-
+  console.log(event);
+  var name = event.target.storeName.value  ;
+  console.log(name);
+  var minCust = event.target.minumumCustomers.value  ;
+  var maxCust = event.target.maximumCustomers.value  ;
+  var avgCookies = event.target.averageSales.value   ;
+ 
+  if (minCust > maxCust){
+    var tmp = minCust;
+    minCust = maxCust;
+    maxCust = tmp; }
 
   var newCookies = new Store(name, minCust, maxCust, avgCookies);
 
   storeLocations.push(newCookies);
-  // console.log(newCookies);
-  render();
-}
-
+}) ;
 
 
 
