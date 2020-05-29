@@ -1,8 +1,14 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Roboto+Mono&display=swap');
+
+
 header{
     background-color:maroon ; 
     height: 100px;
+
 }
 
 header h1{
@@ -10,6 +16,8 @@ header h1{
     color: beige;
     margin-left: 15px;
     padding: 5px;
+    font-family: 'Balsamiq Sans', cursive;
+
 }
 #container{
 margin: 15px;
@@ -46,6 +54,8 @@ p{
     margin-top: 30px;
     text-align: center;
     font-size: 25px;
+    font-family: 'Roboto Mono', monospace;
+
 }
 
 footer{
